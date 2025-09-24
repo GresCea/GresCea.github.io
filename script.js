@@ -1,9 +1,9 @@
 const routes = {
-  '/home': null, // homepage content is hardcoded in index.html
-  '/home/profile': '/pages/profile.html',
-  '/home/hometown': '/pages/hometown.html',
-  '/home/food': '/pages/food.html',
-  '/home/tourist': '/pages/tourist.html'
+  '/quiz1': null, // homepage content is hardcoded in index.html
+  '/quiz1/profile': '/pages/profile.html',
+  '/quiz1/hometown': '/pages/hometown.html',
+  '/quiz1/food': '/pages/food.html',
+  '/quiz1/tourist': '/pages/tourist.html'
 };
 
 function route() {
