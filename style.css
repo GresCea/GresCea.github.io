@@ -1,3 +1,10 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  text-decoration: underline;
 }
