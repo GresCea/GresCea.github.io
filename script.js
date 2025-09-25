@@ -1,5 +1,6 @@
 const routes = {
-  '/quiz1': null, // homepage content is hardcoded in index.html
+  '/quiz1': null, // Used for internal routing
+  '/quiz1.html': null, // Handle direct access to quiz1.html
   '/quiz1/profile': '/pages/profile.html',
   '/quiz1/hometown': '/pages/hometown.html',
   '/quiz1/food': '/pages/food.html',
@@ -7,7 +8,13 @@ const routes = {
 };
 
 function route() {
-  const path = location.pathname;
+  let path = location.pathname;
+
+  // Normalize common home paths to /quiz1
+  if (path === '/quiz1.html') {
+    path = '/quiz1';
+  }
+
   const content = document.getElementById('content');
 
   if (routes[path] === undefined) {
@@ -16,11 +23,7 @@ function route() {
   }
 
   if (routes[path] === null) {
-    // Home page - already in HTML
-    content.innerHTML = `
-      <h1>Welcome to My Jakarta</h1>
-      <p>This is a personal guide to the beautiful city of Jakarta.</p>
-    `;
+    // Home page - keep existing HTML content
     return;
   }
 
