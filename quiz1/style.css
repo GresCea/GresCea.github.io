@@ -1,0 +1,16 @@
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+ul li {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
