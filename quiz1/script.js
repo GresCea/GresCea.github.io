@@ -1,17 +1,23 @@
 const routes = {
-  '/quiz1': '/quiz1/home/home.html',
-  '/quiz1/profile': '/quiz1/profile/profile.html',
-  '/quiz1/hometown': '/quiz1/hometown/hometown.html',
-  '/quiz1/food': '/quiz1/food/food.html',
-  '/quiz1/tourist': '/quiz1/tourist/tourist.html'
+  '/quiz1/home': 'home/home.html',
+  '/quiz1/profile': 'profile/profile.html',
+  '/quiz1/hometown': 'hometown/hometown.html',
+  '/quiz1/food': 'food/food.html',
+  '/quiz1/tourist': 'tourist/tourist.html'
 };
 
 function route() {
-  const path = location.pathname;
+  let path = location.pathname;
+
+  if (path === '/quiz1' || path === '/quiz1/') {
+    history.replaceState(null, null, '/quiz1/home');
+    path = '/quiz1/home';
+  }
+
   const content = document.getElementById('content');
   const page = routes[path];
 
-  if (page === undefined) {
+  if (!page) {
     content.innerHTML = '<h2>404 - Page not found</h2>';
     return;
   }
