@@ -186,7 +186,7 @@ function drawArrow() {
     ctx.rotate(arrow.angle);
 
     ctx.beginPath();
-    ctx.moveTo(25, 0);   // ujung panah
+    ctx.moveTo(25, 0);
     ctx.lineTo(-20, -20);
     ctx.lineTo(-10, 0);
     ctx.lineTo(-20, 20);
