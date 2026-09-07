@@ -15,7 +15,10 @@ NRP  : 5025241114
 Kelas: B
 
 Challenge:
-- ...
+- A - Bouncing Object
+- B - Follow Mouse
+- C - Click to Change Color
+- E - Mouse Coordinate
 */
 // --------------------------------------------------
 
@@ -64,17 +67,21 @@ const colors = [
     "#e74c3c",
     "#2ecc71",
     "#f1c40f",
-    "#3498db"
+    "#3498db",
+    "#ffffff"
 ];
 
 let colorIndex = 0;
+let canvasColorIndex = 5;
 
 // --------------------------------------------------
 // CANVAS
 // --------------------------------------------------
 
 function clearCanvas() {
-    ctx.clearRect(
+    ctx.fillStyle = colors[canvasColorIndex];
+
+    ctx.fillRect(
         0,
         0,
         canvas.width,
@@ -267,7 +274,7 @@ canvas.addEventListener("mousemove", function(event) {
 
 canvas.addEventListener("click", function() {
     colorIndex = (colorIndex + 1) % colors.length;
-    movingBall.color = colors[colorIndex];
+    canvasColorIndex = (canvasColorIndex + 1) % colors.length;
 });
 
 window.addEventListener("keydown", function(event) {
