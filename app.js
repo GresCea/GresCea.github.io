@@ -17,7 +17,8 @@ Kelas: B
 Challenge:
 - A - Bouncing Object
 - B - Follow Mouse
-- C - Click to Change Color
+- C - Click to Change Canvas Color
+- D - Keyboard Movement
 - E - Mouse Coordinate
 */
 // --------------------------------------------------
@@ -78,7 +79,8 @@ const colors = [
     "#2ecc71",
     "#f1c40f",
     "#3498db",
-    "#ffffff"
+    "#ffffff",
+    "#000000"
 ];
 
 let colorIndex = 0;
@@ -198,6 +200,9 @@ function drawArrow() {
 
 function drawMouseCoordinate() {
     ctx.fillStyle = "#222";
+    if (canvasColorIndex === 6) {
+        ctx.fillStyle = "#ffffff"
+    }
     ctx.font = "16px Arial";
 
     ctx.fillText(

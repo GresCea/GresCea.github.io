@@ -1,3 +1,5 @@
 # Joey's WebPro
 
-[Quiz1](https://grescea.github.io/quiz1)
+[Praktikum 1 - Graphics Playground dengan HTML Canvas 2D](https://grescea.github.io)
+
+![Screenshot](Screenshot.png)
