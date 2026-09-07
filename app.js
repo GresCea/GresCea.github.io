@@ -2,7 +2,21 @@ const canvas = document.getElementById("graphicsCanvas");
 const ctx = canvas.getContext("2d");
 
 // --------------------------------------------------
-// DATA
+/*
+Praktikum Grafika Komputer - Pertemuan 1
+Graphics Playground
+
+Nama : Joaquin Fairuz Nawfal Ismono
+NRP  : 5025241106
+Kelas: B
+
+Nama : Hasan Abdurrahman
+NRP  : 5025241114
+Kelas: B
+
+Challenge:
+- ...
+*/
 // --------------------------------------------------
 
 const rectangle = {
