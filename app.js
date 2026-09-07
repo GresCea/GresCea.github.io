@@ -27,6 +27,13 @@ const rectangle = {
     color: "#3498db"
 };
 
+const circle = {
+    x: 650,
+    y: 120,
+    radius: 10,
+    color: "#2ecc71"
+};
+
 const movingBall = {
     x: 350,
     y: 300,
@@ -171,6 +178,26 @@ function drawMouseCoordinate() {
     );
 }
 
+function followMouse() {
+    circle.x = mouse.x;
+    circle.y = mouse.y;
+}
+
+function drawCircleFollowMouse() {
+    ctx.beginPath();
+
+    ctx.arc(
+        circle.x,
+        circle.y,
+        circle.radius,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fillStyle = circle.color;
+    ctx.fill();
+}
+
 // --------------------------------------------------
 // UPDATE
 // --------------------------------------------------
@@ -284,9 +311,12 @@ function animate() {
     updateMovingBall();
     updatePlayer();
 
+    followMouse();
+
     drawRectangle();
     drawLine();
     drawCircle();
+    drawCircleFollowMouse();
     drawTriangle();
     drawMovingBall();
     drawPlayer();
