@@ -30,6 +30,16 @@ const rectangle = {
     color: "#3498db"
 };
 
+const arrow = {
+    x: 600,
+    y: 350,
+    width: 50,
+    height: 50,
+    speed: 5,
+    angle: 0,
+    color: "#e67e22"
+};
+
 const circle = {
     x: 650,
     y: 120,
@@ -163,15 +173,27 @@ function drawMovingBall() {
     ctx.fill();
 }
 
-function drawPlayer() {
-    ctx.fillStyle = player.color;
+function drawArrow() {
+    ctx.save();
 
-    ctx.fillRect(
-        player.x,
-        player.y,
-        player.width,
-        player.height
+    ctx.translate(
+        arrow.x + arrow.width / 2,
+        arrow.y + arrow.height / 2
     );
+
+    ctx.rotate(arrow.angle);
+
+    ctx.beginPath();
+    ctx.moveTo(25, 0);   // ujung panah
+    ctx.lineTo(-20, -20);
+    ctx.lineTo(-10, 0);
+    ctx.lineTo(-20, 20);
+    ctx.closePath();
+
+    ctx.fillStyle = arrow.color;
+    ctx.fill();
+
+    ctx.restore();
 }
 
 function drawMouseCoordinate() {
@@ -229,30 +251,40 @@ function updateMovingBall() {
 }
 
 function updatePlayer() {
+    let directionX = 0;
+    let directionY = 0;
+
     if (keys["ArrowLeft"]) {
-        player.x -= player.speed;
+        directionX -= 1;
     }
 
     if (keys["ArrowRight"]) {
-        player.x += player.speed;
+        directionX += 1;
     }
 
     if (keys["ArrowUp"]) {
-        player.y -= player.speed;
+        directionY -= 1;
     }
 
     if (keys["ArrowDown"]) {
-        player.y += player.speed;
+        directionY += 1;
     }
 
-    player.x = Math.max(
+    arrow.x += directionX * arrow.speed;
+    arrow.y += directionY * arrow.speed;
+
+    if (directionX !== 0 || directionY !== 0) {
+        arrow.angle = Math.atan2(directionY, directionX);
+    }
+
+    arrow.x = Math.max(
         0,
-        Math.min(canvas.width - player.width, player.x)
+        Math.min(canvas.width - arrow.width, arrow.x)
     );
 
-    player.y = Math.max(
+    arrow.y = Math.max(
         0,
-        Math.min(canvas.height - player.height, player.y)
+        Math.min(canvas.height - arrow.height, arrow.y)
     );
 }
 
@@ -299,8 +331,9 @@ window.addEventListener("keydown", function(event) {
         event.key.toLowerCase() === "r" &&
         !event.repeat
     ) {
-        player.x = 600;
-        player.y = 350;
+        arrow.x = 600;
+        arrow.y = 350;
+        arrow.angle = 0;
     }
 });
 
@@ -326,7 +359,7 @@ function animate() {
     drawCircleFollowMouse();
     drawTriangle();
     drawMovingBall();
-    drawPlayer();
+    drawArrow();
     drawMouseCoordinate();
 
     requestAnimationFrame(animate);
