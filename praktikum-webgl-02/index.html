@@ -1,0 +1,94 @@
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Primitive Playground — Praktikum 2</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <span class="eyebrow">PRAKTIKUM 02 · WEBGL FUNDAMENTAL</span>
+          <h1>WebGL Primitive Playground</h1>
+          <p>
+            Eksplorasi buffer, shader, attribute, draw mode, vertex color, dan
+            interaksi.
+          </p>
+        </div>
+        <span class="status-badge" id="statusBadge">RUNNING · WEBGL2</span>
+      </header>
+
+      <div class="workspace">
+        <section class="canvas-panel">
+          <div class="canvas-frame">
+            <canvas id="webglCanvas" width="960" height="600"></canvas>
+          </div>
+          <div class="hud-grid">
+            <div class="hud-card"><span>FPS</span><b id="fpsValue">60</b></div>
+            <div class="hud-card">
+              <span>Primitive</span><b id="primitiveCount">4</b>
+            </div>
+            <div class="hud-card">
+              <span>Draw mode</span><b id="drawModeValue">TRIANGLES</b>
+            </div>
+            <div class="hud-card">
+              <span>Mouse NDC</span><b id="mouseValue">(0.00, 0.00)</b>
+            </div>
+          </div>
+        </section>
+
+        <aside class="control-panel">
+          <span class="eyebrow">PARAMETER CONTROL</span>
+
+          <label class="field-label" for="primitiveSelect">Primitive selector</label>
+          <select id="primitiveSelect">
+            <option value="triangle">Triangle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="line">Line shape</option>
+            <option value="points">Procedural points</option>
+          </select>
+
+          <label class="field-label" for="drawModeSelect">Draw mode</label>
+          <select id="drawModeSelect">
+            <option value="triangles">TRIANGLES</option>
+            <option value="line">LINE_STRIP</option>
+            <option value="points">POINTS</option>
+          </select>
+
+          <label class="range-row" for="speedControl"><span>Movement speed</span><output id="speedValue">0.35</output></label>
+          <input id="speedControl" type="range" min="0.05" max="1.2" step="0.05" value="0.35">
+
+          <div class="field-label">Color control</div>
+          <div class="color-grid">
+            <button class="color-button red" data-color="red">Red</button>
+            <button class="color-button green" data-color="green">Green</button>
+            <button class="color-button blue" data-color="blue">Blue</button>
+            <button class="color-button cyan" data-color="cyan">Cyan</button>
+            <button class="color-button random" data-color="random">
+              Random
+            </button>
+          </div>
+
+          <label class="check-row"><input id="patternToggle" type="checkbox" checked=""> Procedural
+            grid pattern</label>
+          <div class="button-grid">
+            <button class="primary-button" id="pauseButton">Pause (P)</button>
+            <button id="resetButton">Reset (R)</button>
+          </div>
+          <button class="wide-button" id="clearSpawnedButton">
+            Clear spawned primitives
+          </button>
+
+          <div class="keyboard-help">
+            <b>Keyboard &amp; mouse</b>
+            <span>Arrow / WASD: movement state-based</span>
+            <span>R: reset · P: pause · C: change color</span>
+            <span>Click canvas: spawn primitive at NDC</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  
+
+</body></html>
