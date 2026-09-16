@@ -1,13 +1,15 @@
 # WebGL Fundamental Playground
 
-## Nama mahasiswa
-Isi nama mahasiswa.
-
-## NRP
-Isi NRP mahasiswa.
+| Name           | NRP        | Kelas     |
+| ---            | ---        | ----------|
+| Joaquin Fairuz Nawfal Ismono | 5025241106 | B |
+| Hasan Abdurrahman | 5025241114 | B |
 
 ## Deskripsi aplikasi
 WebGL Fundamental Playground adalah aplikasi WebGL2 untuk mempelajari pipeline grafis dasar: vertex data, buffer, attribute, shader, primitive, rasterization, fragment shader, dan draw call.
+
+## Link web aplikasi
+[Praktikum 2 - WebGL Fundamental Playground](https://grescea.github.io/praktikum-webgl-02)
 
 ## Primitive yang digunakan
 - Triangle dengan vertex color
