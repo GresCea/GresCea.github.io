@@ -18,3 +18,7 @@
 [Praktikum 3 - Interactive Transformation & Coordinate System dengan WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-transform-03)
 
 ![Screenshot](praktikum-transform-03/Screenshot.png)
+
+[Praktikum 4 - Interactive Transformation & Coordinate System dengan WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-camera-04)
+
+![Screenshot](praktikum-camera-04/Screenshot.png)
