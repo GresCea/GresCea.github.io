@@ -15,6 +15,7 @@ Aplikasi WebGL2 untuk mempelajari cube 3D, Model Matrix, View Matrix, camera, Pe
 - Arrow Left/Right: mengubah posisi camera X.
 - Arrow Up/Down: mengubah posisi camera Y.
 - W/S: mengubah posisi camera Z.
+- K: pause atau resume rotasi otomatis kubus.
 - R: reset seluruh state.
 
 ## Projection yang tersedia
@@ -23,6 +24,11 @@ Aplikasi WebGL2 untuk mempelajari cube 3D, Model Matrix, View Matrix, camera, Pe
 
 ## FOV default
 `60` derajat. Tekan `[` atau `]` untuk mengurangi atau menambah FOV saat mode perspective aktif.
+
+Preset FOV:
+- `1`: `35` derajat
+- `2`: `60` derajat
+- `3`: `90` derajat
 
 ## Near/Far preset
 Tekan `N` untuk berganti preset:
@@ -33,6 +39,13 @@ Tekan `N` untuk berganti preset:
 
 ## Depth Test toggle
 Tekan `D` untuk mengaktifkan atau menonaktifkan Depth Test. Depth buffer tetap dibersihkan setiap frame.
+
+## Rotasi Kubus
+Cube berotasi secara otomatis pada:
+- Sumbu X dengan kecepatan `25` derajat per detik.
+- Sumbu Y dengan kecepatan `40` derajat per detik.
+
+Tekan `K` untuk menghentikan rotasi. Tekan `K` kembali untuk melanjutkan rotasi dari posisi terakhir.
 
 ## Challenge yang dikerjakan
 - Camera position control.

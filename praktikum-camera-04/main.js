@@ -207,6 +207,7 @@ const clipPresets = [
 
 let clipPresetIndex = 0;
 let depthEnabled = true;
+let cubePaused = false;
 const keys = {};
 
 function createModelMatrix(position = [0, 0, 0], scale = 1) {
@@ -247,9 +248,12 @@ function createProjectionMatrix() {
 }
 
 function updateCube(dt) {
+  if (cubePaused) return;
+
   cube.rotationX += 25 * dt;
   cube.rotationY += 40 * dt;
 }
+
 
 function updateCamera(dt) {
   const cameraSpeed = 2.0;
@@ -286,6 +290,7 @@ function resetScene() {
   projectionState.far = 100.0;
   clipPresetIndex = 0;
   depthEnabled = true;
+  cubePaused = false;
   cube.rotationX = 20;
   cube.rotationY = 30;
 }
@@ -327,6 +332,7 @@ window.addEventListener("keydown", (event) => {
   }
   if (key === "n") nextClipPreset();
   if (key === "d") depthEnabled = !depthEnabled;
+  if (key === "k") cubePaused = !cubePaused;
   if (key === "r") resetScene();
   if (key === "1") projectionState.fov = 35;
   if (key === "2") projectionState.fov = 60;
