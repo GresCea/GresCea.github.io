@@ -22,3 +22,7 @@
 [Praktikum 4 - Interactive Transformation & Coordinate System dengan WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-camera-04)
 
 ![Screenshot](praktikum-camera-04/Screenshot.png)
+
+[Praktikum 5 - Lighting, Shading & Texture pada WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-lighting-05)
+
+![Screenshot](praktikum-lighting-05/Screenshot.png)

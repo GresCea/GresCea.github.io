@@ -73,6 +73,10 @@ uniform vec3 u_cameraPosition;
 uniform float u_ambientStrength;
 uniform float u_shininess;
 uniform sampler2D u_texture;
+uniform bool u_useTexture;
+uniform bool u_useAmbient;
+uniform bool u_useDiffuse;
+uniform bool u_useSpecular;
 
 out vec4 outColor;
 
@@ -94,12 +98,12 @@ void main() {
 
   vec3 texColor = texture(u_texture, v_texCoord).rgb;
 
-  vec3 color =
-    u_ambientStrength * texColor +
-    diffuseFactor * u_lightColor * texColor +
-    specularFactor * u_lightColor;
+  vec3 ambient = u_useAmbient ? u_ambientStrength * u_lightColor : vec3(0.0);
+  vec3 diffuse = u_useDiffuse ? diffuseFactor * u_lightColor : vec3(0.0);
+  vec3 specular = u_useSpecular ? specularFactor * u_lightColor : vec3(0.0);
 
-  outColor = vec4(color, 1.0);
+
+  outColor = vec4(texColor * (ambient + diffuse) + specular, 1.0);
 }
 `;
 
@@ -246,6 +250,21 @@ const locations = {
   uvScale: gl.getUniformLocation(
     gpuProgram,
     "u_uvScale"
+  ),
+
+  useAmbient: gl.getUniformLocation(
+    gpuProgram,
+    "u_useAmbient"
+  ),
+
+  useDiffuse: gl.getUniformLocation(
+    gpuProgram,
+    "u_useDiffuse"
+  ),
+
+  useSpecular: gl.getUniformLocation(
+    gpuProgram,
+    "u_useSpecular"
   ),
 };
 
@@ -544,6 +563,7 @@ let wrapIndex = 0;
 let shadingMode = "FLAT";
 let uvScale = 1;
 let shininess = 32;
+let ambientStrength = 0.18;
 let cubePaused = false;
 
 const cube = {
@@ -560,6 +580,12 @@ const camera = {
 const light = {
   position: [2, 2, 2],
 };
+
+let components = {
+  ambient: true,
+  diffuse: true,
+  specular: true,
+}
 
 const keys = Object.create(null);
 
@@ -710,23 +736,39 @@ function update(deltaTime) {
   }
 
   // Shininess
-  if (keys["-"] || keys["_"]) {
+  if (keys["-"]) {
     shininess = Math.max(
       2,
       shininess - 50 * deltaTime
     );
   }
 
-  if (keys["+"] || keys["="]) {
+  if (keys["_"]) {
     shininess = Math.min(
       128,
       shininess + 50 * deltaTime
+    );
+  }
+
+  // Ambient Strength
+  if (keys["="]) {
+    ambientStrength = Math.max(
+      0,
+      ambientStrength - 0.5 * deltaTime
+    );
+  }
+
+  if (keys["+"]) {
+    ambientStrength = Math.min(
+      1,
+      ambientStrength + 0.5 * deltaTime
     );
   }
 }
 
 function reset() {
   light.position = [2, 2, 2];
+  ambientStrength = 0.18;
 
   cube.rotationX = 20;
   cube.rotationY = 30;
@@ -737,6 +779,9 @@ function reset() {
   uvScale = 1;
   shininess = 32;
   cubePaused = false;
+  components.ambient = true;
+  components.diffuse = true;
+  components.specular = true;
 
   for (const key in keys) {
     keys[key] = false;
@@ -795,6 +840,20 @@ window.addEventListener("keydown", (event) => {
   if (key === "p") {
     cubePaused = !cubePaused;
   }
+
+  // Toggle components
+
+  if (key === "1") {
+    components.ambient = !components.ambient;
+  }
+
+  if (key === "2") {
+    components.diffuse = !components.diffuse;
+  }
+
+  if (key === "3") {
+    components.specular = !components.specular;
+  }
 });
 
 window.addEventListener("keyup", (event) => {
@@ -812,7 +871,11 @@ const info = {
   uv: document.getElementById("uvInfo"),
   shininess: document.getElementById("shininessInfo"),
   light: document.getElementById("lightInfo"),
+  ambientStrength: document.getElementById("ambientStrengthInfo"),
   rotation: document.getElementById("rotationInfo"),
+  ambient: document.getElementById("ambientInfo"),
+  diffuse: document.getElementById("diffuseInfo"),
+  specular: document.getElementById("specularInfo"),
 };
 
 function updateHUD() {
@@ -847,11 +910,37 @@ function updateHUD() {
         .join(", ")})`;
   }
 
+  if (info.ambientStrength) {
+    info.ambientStrength.textContent =
+      ambientStrength.toFixed(2);
+  }
+
   if (info.rotation) {
     info.rotation.textContent =
       cubePaused
         ? "PAUSED"
         : "RUNNING";
+  }
+
+  if (info.ambient) {
+    info.ambient.textContent =
+      components.ambient
+        ? "ACTIVATED"
+        : "DEACTIVATED";
+  }
+
+  if (info.diffuse) {
+    info.diffuse.textContent =
+      components.diffuse
+        ? "ACTIVATED"
+        : "DEACTIVATED";
+  }
+
+  if (info.specular) {
+    info.specular.textContent =
+      components.specular
+        ? "ACTIVATED"
+        : "DEACTIVATED";
   }
 }
 
@@ -1026,7 +1115,7 @@ function draw() {
 
   gl.uniform1f(
     locations.ambient,
-    0.18
+    ambientStrength
   );
 
   gl.uniform1f(
@@ -1050,6 +1139,21 @@ function draw() {
   gl.uniform1i(
     locations.texture,
     0
+  );
+
+  gl.uniform1i(
+    locations.useAmbient,
+    components.ambient
+  );
+
+  gl.uniform1i(
+    locations.useDiffuse,
+    components.diffuse
+  );
+
+  gl.uniform1i(
+    locations.useSpecular,
+    components.specular
   );
 
   gl.drawArrays(
