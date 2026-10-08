@@ -26,3 +26,7 @@
 [Praktikum 5 - Lighting, Shading & Texture pada WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-lighting-05)
 
 ![Screenshot](praktikum-lighting-05/Screenshot.png)
+
+[Praktikum 6 - Three.js Mini 3D Scene](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-threejs-06)
+
+![Screenshot](praktikum-threejs-06/Screenshot.png)
