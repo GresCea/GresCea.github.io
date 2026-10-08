@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Three.js Mini 3D Scene</title>
+
+  <!-- Import CSS -->
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div id="hud">
+      <strong>Three.js Mini 3D Scene</strong>
+      <span id="info">Loading...</span>
+      <span>
+        Drag = Orbit |
+        Scroll = Zoom |
+        Right drag = Pan |
+        Space = Pause |
+        R = Reset
+      </span>
+    </div>
+  </div>
+
+  <!-- Import map Three.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+      }
+    }
+  </script>
+
+  <!-- Import JavaScript -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
