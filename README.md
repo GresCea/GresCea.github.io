@@ -30,3 +30,7 @@
 [Praktikum 6 - Three.js Mini 3D Scene](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-threejs-06)
 
 ![Screenshot](praktikum-threejs-06/Screenshot.png)
+
+[Praktikum 7 - Interactive Web 3D Prototype](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-threejs-07)
+
+![Screenshot](praktikum-threejs-07/Screenshot.png)
