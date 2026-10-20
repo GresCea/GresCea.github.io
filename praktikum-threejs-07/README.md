@@ -1,26 +1,15 @@
 # Interactive Web 3D Prototype
 
-## Identitas Kelompok
-- Nama kelompok: Isi nama kelompok.
-- Anggota: Isi nama dan NRP seluruh anggota.
-- Mata kuliah: EF234504 - Grafika Komputer.
-- Pertemuan: 7.
+| Name           | NRP        | Kelas     |
+| ---            | ---        | ----------|
+| Joaquin Fairuz Nawfal Ismono | 5025241106 | B |
+| Hasan Abdurrahman | 5025241114 | B |
 
 ## Judul dan Deskripsi Prototype
 **Interactive Web 3D Prototype** adalah scene Three.js interaktif yang mendemonstrasikan Scene Graph, parent-child hierarchy, PBR material, model GLB, AnimationMixer, raycasting, hover, click selection, visual feedback, dan environment lighting.
 
-## Struktur Scene Graph
-```text
-Scene
-├── AmbientLight
-├── DirectionalLight
-├── Ground
-├── Hierarchy Group
-│   └── Parent Object
-│       └── Child Object
-├── PBR Sphere
-└── Imported GLB
-```
+## Link web aplikasi
+[Interactive Web 3D Prototype](https://grescea.github.io/praktikum-threejs-07)
 
 ## Hierarchy Parent-Child
 `Child Object` menjadi child dari `Parent Object`, sedangkan keduanya berada di dalam `Hierarchy Group`. Transform parent memengaruhi world transform child, sementara position child tetap relatif terhadap parent.
