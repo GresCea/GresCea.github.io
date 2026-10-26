@@ -34,3 +34,7 @@
 [Praktikum 7 - Interactive Web 3D Prototype](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-threejs-07)
 
 ![Screenshot](praktikum-threejs-07/Screenshot.png)
+
+[Praktikum UTS - Escape Room 3D](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-uts)
+
+![Screenshot](praktikum-uts/Screenshot.png)
