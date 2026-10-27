@@ -57,7 +57,7 @@ Pemain dinyatakan menang setelah kode benar, animasi pintu selesai, dan pemain b
 - Koneksi internet untuk memuat Three.js melalui CDN dan import map.
 - Python 3 atau Node.js untuk menjalankan server lokal. Karena proyek menggunakan ES modules, server lokal diperlukan; membuka `index.html` langsung melalui `file://` tidak didukung secara konsisten.
 
-### Menjalankan server lokal
+### Cara 1 - Menjalankan server lokal
 Jalankan salah satu perintah berikut dari direktori proyek:
 
 Menggunakan Python 3:
@@ -72,6 +72,10 @@ Setelah server berjalan, buka alamat yang ditampilkan oleh server (untuk Python)
 ```text
 http://localhost:8000
 ```
+
+### Cara 2 - Buka di github.io
+
+[Praktikum UTS - Escape Room 3D](https://grescea.github.io/praktikum-uts)
 
 ---
 
