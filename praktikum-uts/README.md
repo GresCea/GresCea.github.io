@@ -388,7 +388,7 @@ Proyek ini dikembangkan dari awal dan tidak menggunakan template atau fork proye
 | Aset | Pembuat | Sumber | Lisensi |
 | :--- | :--- | :--- | :--- |
 | Three.js | Three.js Contributors | [threejs.org](https://threejs.org/) | MIT |
-| Environment map JPEG | Octavian Tudose | [Poly Haven](https://polyhaven.com/a/kloppenheim_02_puresky) | CC0 |
+| Environment map JPEG | Greg Zaal, Jarod Guest | [Poly Haven](https://polyhaven.com/a/kloppenheim_02_puresky) | CC0 |
 | Model GLB | Innerscene — original model | [Inner Scene](https://www.innerscene.com/tools/library/3d-parts/voyage-campaign-chest-1d609eb1) | CC0 |
 | Planet Texture | solarsystemscope | [solarsystemscope](https://www.solarsystemscope.com/textures/) | CC BY |
 
