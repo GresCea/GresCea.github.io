@@ -38,3 +38,7 @@
 [Praktikum UTS - Escape Room 3D](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-uts)
 
 ![Screenshot](praktikum-uts/Screenshot.png)
+
+[Praktikum 9 - Blender Fundamental & 3D Modeling](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-blender-09)
+
+![Screenshot](praktikum-uts/Screenshot.png)
