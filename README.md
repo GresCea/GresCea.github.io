@@ -9,11 +9,9 @@
 
 ![Screenshot](praktikum-grafika-p1/Screenshot.png)
 
-
 [Praktikum 2 - WebGL Fundamental Playground](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-webgl-02)
 
 ![Screenshot](praktikum-webgl-02/Screenshot.png)
-
 
 [Praktikum 3 - Interactive Transformation & Coordinate System dengan WebGL](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-transform-03)
 
@@ -41,4 +39,4 @@
 
 [Praktikum 9 - Blender Fundamental & 3D Modeling](https://github.com/GresCea/GresCea.github.io/tree/main/praktikum-blender-09)
 
-![Screenshot](praktikum-uts/Screenshot.png)
+![Screenshot](praktikum-blender-09/Screenshot.png)
