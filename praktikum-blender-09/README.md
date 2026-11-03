@@ -63,3 +63,7 @@ Aset 3D *hard-surface* berbentuk kotak penyimpanan mekanis futuristik (*sci-fi c
   - Menjalankan `Apply Scale` (`Ctrl + A` -> `Scale`) di *Object Mode* sebelum melakukan pemodelan detail/bevel agar skala kembali netral `(1, 1, 1)`.
   - Masuk ke *Edit Mode*, pilih seluruh geometri dengan `A`, lalu jalankan `Merge by Distance` (`M` -> `By Distance`) untuk membersihkan *vertex* yang menumpuk di lokasi yang sama.
   - Melakukan *topology cleanup* dengan menghubungkan *vertex* baru hasil potongan *Knife* ke *vertex/edge* terdekat menggunakan *Knife* atau *Connect*, sehingga *topology* kembali berupa Quad atau Triangle yang rapi.
+
+## Screenshots
+
+![Screenshot](Screenshot.png)
